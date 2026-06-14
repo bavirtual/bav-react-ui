@@ -7,9 +7,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/bav-ui.mjs",
-      "require": "./dist/bav-ui.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/bav-ui.cjs"
     },
     "./styles/global.css": "./dist/global.css"
   },
