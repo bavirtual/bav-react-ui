@@ -1,13 +1,12 @@
-# @bav/ui
+# bav-react-ui
 
-The "@bav/ui" design system: a themeable React component library containing buttons, inputs, tables, dialogs, toasts, layout primitives and a
+The "bav-react-ui" design system: a themeable React component library containing buttons, inputs, tables, dialogs, toasts, layout primitives and a
 light/dark theme.
 
 ## Usage
 
 ```tsx
-import { ThemeProvider, Button } from "@bav/ui";
-import "@bav/ui/styles/global.css";
+import { ThemeProvider, Button } from "bav-react-ui";
 
 export const App = () => (
   <ThemeProvider>

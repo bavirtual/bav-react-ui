@@ -18,7 +18,7 @@ export function Divider({ orientation, children, className }: DividerProps) {
   }
   return (
     <hr
-      className={cx(styles.divider, styles[orientation], className)}
+      className={cx(styles.divider, styles[orientation!], className)}
       aria-orientation={orientation}
     />
   );
