@@ -18,7 +18,7 @@ export function Stack({
   gap,
   align,
   justify,
-  as: As,
+  as: As = "div",
   style,
   children,
   ...rest
@@ -28,7 +28,7 @@ export function Stack({
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: gapVar(gap),
+        gap: gapVar(gap!),
         alignItems: align,
         justifyContent: justify,
         ...style,
@@ -51,7 +51,7 @@ export function Inline({
   align,
   justify,
   wrap,
-  as: As,
+  as: As = "div",
   style,
   children,
   ...rest
@@ -61,7 +61,7 @@ export function Inline({
       style={{
         display: "flex",
         flexDirection: "row",
-        gap: gapVar(gap),
+        gap: gapVar(gap!),
         alignItems: align,
         justifyContent: justify,
         flexWrap: wrap ? "wrap" : undefined,

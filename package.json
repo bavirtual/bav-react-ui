@@ -1,6 +1,6 @@
 {
-  "name": "bav-ui",
-  "version": "0.1.0",
+  "name": "bav-react-ui",
+  "version": "0.1.1",
   "type": "module",
   "main": "./dist/bav-ui.cjs",
   "module": "./dist/bav-ui.mjs",
@@ -14,11 +14,18 @@
     "./styles/global.css": "./dist/global.css"
   },
   "files": ["dist"],
+  "workspaces": [
+    "playground"
+  ],
   "scripts": {
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "playground:dev": "cd playground && bun run dev",
+    "playground:build": "cd playground && bun run build",
+    "playground:build:docs": "cd playground && bun run build && rm -rf ../docs && mv storybook-static ../docs",
+    "playground:deploy:gh-pages": "npm run playground:build:docs && bunx gh-pages -d docs"
   },
   "dependencies": {
     "react-feather": "^2.0.10"

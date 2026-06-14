@@ -27,7 +27,7 @@ export function Title({ level, type, noMargin, className, ...rest }: TitleProps)
       className={cx(
         styles.title,
         styles[`h${level}` as keyof typeof styles],
-        toneClass[type],
+        toneClass[type!],
         noMargin && styles.noMargin,
         className,
       )}
@@ -59,8 +59,8 @@ export function Text({
     <span
       className={cx(
         styles.text,
-        toneClass[type],
-        size !== "md" && styles[size],
+        toneClass[type!],
+        size !== "md" && styles[size!],
         strong && styles.strong,
         code && styles.code,
         mono && styles.mono,
@@ -77,7 +77,7 @@ export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 export function Paragraph({ type, className, ...rest }: ParagraphProps) {
-  return <p className={cx(styles.paragraph, toneClass[type], className)} {...rest} />;
+  return <p className={cx(styles.paragraph, toneClass[type!], className)} {...rest} />;
 }
 
 export const Typography = { Title, Text, Paragraph };

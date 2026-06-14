@@ -25,7 +25,7 @@ export function IconButton({
       title={label}
       className={cx(
         styles.button,
-        styles[size],
+        styles[size!],
         variant === "solid" && styles.solid,
         variant === "danger" && styles.danger,
         className,

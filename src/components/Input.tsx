@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={invalid || undefined}
         className={cx(
           styles.input,
-          styles[inputSize],
+          styles[inputSize!],
           leftIcon && styles.hasIcon,
           invalid && styles.invalid,
           className,

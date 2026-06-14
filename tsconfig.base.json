@@ -12,15 +12,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
-    "baseUrl": ".",
-    "paths": {
-      "@bav/api-kit": ["packages/api-kit/src/index.ts"],
-      "@bav/config": ["packages/config/src/index.ts"],
-      "@bav/auth-server": ["packages/auth-server/src/index.ts"],
-      "@bav/auth-react": ["packages/auth-react/src/index.ts"],
-      "@bav/request": ["packages/request/src/index.ts"],
-      "@bav/ui": ["packages/ui/src/index.ts"],
-      "@bav/ui/*": ["packages/ui/src/*"]
-    }
+    "baseUrl": "."
   }
 }

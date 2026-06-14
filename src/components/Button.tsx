@@ -42,8 +42,8 @@ export function Button({
       disabled={disabled || loading}
       className={cx(
         styles.button,
-        styles[size],
-        variantClass[variant],
+        styles[size!],
+        variantClass[variant!],
         block && styles.block,
         loading && styles.loading,
         className,

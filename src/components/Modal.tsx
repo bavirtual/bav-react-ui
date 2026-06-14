@@ -46,7 +46,7 @@ export function Modal({
   return createPortal(
     <div className={styles.backdrop} onClick={() => dismissible && onClose()} role="presentation">
       <div
-        className={cx(styles.modal, styles[size], className)}
+        className={cx(styles.modal, styles[size!], className)}
         role="dialog"
         aria-modal="true"
         onClick={(e) => e.stopPropagation()}

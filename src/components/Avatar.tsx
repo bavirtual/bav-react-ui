@@ -18,7 +18,7 @@ const initials = (name?: string): string => {
 export function Avatar({ name, src, size, square, className }: AvatarProps) {
   return (
     <span
-      className={cx(styles.avatar, styles[size], square && styles.square, className)}
+      className={cx(styles.avatar, styles[size!], square && styles.square, className)}
       aria-label={name}
       title={name}
     >

@@ -1,0 +1,31 @@
+{
+  "name": "ui-playground",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 5175 --no-open",
+    "storybook": "storybook dev -p 5175 --no-open",
+    "build": "storybook build",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "bav-react-ui": "^0.1.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-feather": "^2.0.10"
+  },
+  "devDependencies": {
+    "@storybook/addon-themes": "^8.6.18",
+    "@storybook/react": "^8.6.18",
+    "@storybook/react-vite": "^8.6.18",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "storybook": "^8.6.18",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3"
+  }
+}

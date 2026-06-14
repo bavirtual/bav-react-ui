@@ -25,7 +25,7 @@ export function Skeleton({
     borderRadius: radius,
   };
 
-  if (variant === "text" && lines > 1) {
+  if (variant === "text" && lines && lines > 1) {
     return (
       <span>
         {Array.from({ length: lines }).map((_, i) => (

@@ -13,7 +13,7 @@ export function Tooltip({ label, placement, children, className }: TooltipProps)
   return (
     <span className={cx(styles.wrap, className)}>
       {children}
-      <span role="tooltip" className={cx(styles.bubble, styles[placement])}>
+      <span role="tooltip" className={cx(styles.bubble, styles[placement!])}>
         {label}
       </span>
     </span>

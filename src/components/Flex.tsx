@@ -22,7 +22,7 @@ export function Flex({
   gap,
   wrap,
   flex,
-  as: As,
+  as: As = "div",
   style,
   children,
   ...rest
