@@ -1,0 +1,7 @@
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid var(--chips-background-active);
+  border-top-color: var(--accent);
+  animation: bav-spin 0.7s linear infinite;
+}

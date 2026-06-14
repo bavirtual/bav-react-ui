@@ -1,0 +1,56 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+}
+.button:hover:not(:disabled) {
+  background: var(--chips-background-active);
+  color: var(--text);
+}
+.button:active:not(:disabled) {
+  transform: scale(0.92);
+}
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.solid {
+  background: var(--chips-background);
+}
+.danger:hover:not(:disabled) {
+  background: rgba(255, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+.sm {
+  width: 28px;
+  height: 28px;
+}
+.md {
+  width: 34px;
+  height: 34px;
+}
+.lg {
+  width: 42px;
+  height: 42px;
+}
+
+.button svg {
+  width: 60%;
+  height: 60%;
+}

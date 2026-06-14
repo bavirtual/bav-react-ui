@@ -1,0 +1,51 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  color: var(--text);
+  font-size: var(--fs-sm);
+  user-select: none;
+}
+.label.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.native {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: transparent;
+  transition:
+    background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+.box svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 3;
+}
+
+.native:checked + .box {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.native:focus-visible + .box {
+  box-shadow: var(--ring);
+}

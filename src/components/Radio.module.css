@@ -1,0 +1,64 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.group.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  color: var(--text);
+  font-size: var(--fs-sm);
+  user-select: none;
+}
+.label.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.native {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dot {
+  position: relative;
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  transition: border-color var(--dur-fast) ease;
+}
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.native:checked + .dot {
+  border-color: var(--accent);
+}
+.native:checked + .dot::after {
+  transform: scale(1);
+}
+.native:focus-visible + .dot {
+  box-shadow: var(--ring);
+}

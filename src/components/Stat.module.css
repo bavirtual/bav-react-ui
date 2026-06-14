@@ -1,0 +1,37 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.label {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.value {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.delta {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+.up {
+  color: var(--success);
+}
+.down {
+  color: var(--danger);
+}
+.hint {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}

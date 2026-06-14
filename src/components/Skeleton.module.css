@@ -1,0 +1,20 @@
+.skeleton {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--chips-background) 25%,
+    var(--chips-background-active) 37%,
+    var(--chips-background) 63%
+  );
+  background-size: 400% 100%;
+  animation: bav-skeleton 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+.text {
+  height: 0.8em;
+  margin: 0.2em 0;
+  border-radius: var(--radius-sm);
+}
+.circle {
+  border-radius: 50%;
+}

@@ -1,0 +1,91 @@
+.title {
+  margin: 0 0 0.4em;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.h1 {
+  font-size: 28px;
+}
+.h2 {
+  font-size: 24px;
+}
+.h3 {
+  font-size: 20px;
+}
+.h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.noMargin {
+  margin-bottom: 0;
+}
+
+.text {
+  color: var(--text);
+}
+
+.secondary {
+  color: var(--muted);
+}
+.success {
+  color: var(--success);
+}
+.warning {
+  color: var(--warning);
+}
+.danger {
+  color: var(--danger);
+}
+.accent {
+  color: var(--accent);
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--chips-background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.xs {
+  font-size: var(--fs-xs);
+}
+.sm {
+  font-size: var(--fs-sm);
+}
+.lg {
+  font-size: var(--fs-lg);
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.paragraph {
+  margin: 0 0 1em;
+  color: var(--text);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
