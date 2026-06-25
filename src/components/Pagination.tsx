@@ -35,12 +35,12 @@ export function Pagination({
   onChange,
   totalItems,
   pageSize,
-  siblingCount,
+  siblingCount = 7,
   className,
 }: PaginationProps) {
   if (pageCount <= 1 && totalItems === undefined) return null;
 
-  const range = buildRange(page, pageCount, Math.max(5, siblingCount!));
+  const range = buildRange(page, pageCount, Math.max(5, siblingCount));
   const go = (p: number) => p >= 1 && p <= pageCount && p !== page && onChange(p);
 
   const summary =

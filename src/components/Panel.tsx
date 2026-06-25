@@ -16,8 +16,8 @@ export function Panel({
   headerTitle,
   headerChildren,
   headerActions,
-  disableHeader,
-  flush,
+  disableHeader = false,
+  flush = false,
   className,
   children,
 }: PanelProps) {

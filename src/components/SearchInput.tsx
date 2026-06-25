@@ -14,7 +14,7 @@ export interface SearchInputProps extends Omit<
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(function SearchInput(
-  { value, onValueChange, shortcut, placeholder, className, ...rest },
+  { value, onValueChange, shortcut, placeholder = "Search…", className, ...rest },
   ref,
 ) {
   const hasValue = value.length > 0;

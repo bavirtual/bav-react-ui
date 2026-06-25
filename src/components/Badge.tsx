@@ -13,10 +13,10 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 export function Badge({
-  tone,
-  square,
-  mono,
-  dot,
+  tone = "neutral",
+  square = false,
+  mono = false,
+  dot = false,
   className,
   children,
   ...rest
@@ -25,7 +25,7 @@ export function Badge({
     <span
       className={cx(
         styles.badge,
-        styles[tone!],
+        styles[tone],
         square && styles.square,
         mono && styles.mono,
         className,

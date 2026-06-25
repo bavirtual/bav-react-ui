@@ -15,10 +15,10 @@ const initials = (name?: string): string => {
   return ((parts[0]?.[0] ?? "") + (parts.length > 1 ? parts[parts.length - 1][0] : "")).slice(0, 2);
 };
 
-export function Avatar({ name, src, size, square, className }: AvatarProps) {
+export function Avatar({ name, src, size = "md", square = false, className }: AvatarProps) {
   return (
     <span
-      className={cx(styles.avatar, styles[size!], square && styles.square, className)}
+      className={cx(styles.avatar, styles[size], square && styles.square, className)}
       aria-label={name}
       title={name}
     >

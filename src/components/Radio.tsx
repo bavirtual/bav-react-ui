@@ -36,7 +36,7 @@ export function RadioGroup({
   value,
   options,
   onChange,
-  horizontal,
+  horizontal = false,
   className,
 }: RadioGroupProps) {
   return (

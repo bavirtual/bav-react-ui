@@ -16,11 +16,11 @@ export interface FlexProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function Flex({
-  vertical,
+  vertical = false,
   align,
   justify,
   gap,
-  wrap,
+  wrap = false,
   flex,
   as: As = "div",
   style,

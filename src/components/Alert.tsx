@@ -21,11 +21,11 @@ const defaultIcon: Record<AlertTone, ReactNode> = {
   danger: <AlertCircle />,
 };
 
-export function Alert({ tone, title, children, onClose, icon, className }: AlertProps) {
+export function Alert({ tone = "info", title, children, onClose, icon, className }: AlertProps) {
   const showIcon = icon !== null;
   return (
-    <div className={cx(styles.alert, styles[tone!], className)} role="alert">
-      {showIcon && <span className={styles.icon}>{icon ?? defaultIcon[tone!]}</span>}
+    <div className={cx(styles.alert, styles[tone], className)} role="alert">
+      {showIcon && <span className={styles.icon}>{icon ?? defaultIcon[tone]}</span>}
       <div className={styles.content}>
         {title && <div className={styles.title}>{title}</div>}
         {children}

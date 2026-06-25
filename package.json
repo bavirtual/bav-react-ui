@@ -11,7 +11,7 @@
       "require": "./dist/bav-ui.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./styles/global.css": "./dist/global.css"
+    "./styles/global.css": "./dist/index.css"
   },
   "files": ["dist"],
   "workspaces": [

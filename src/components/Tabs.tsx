@@ -18,7 +18,7 @@ export interface TabsProps {
   className?: string;
 }
 
-export function Tabs({ items, value, onChange, fitted, className }: TabsProps) {
+export function Tabs({ items, value, onChange, fitted = false, className }: TabsProps) {
   return (
     <div className={cx(styles.list, fitted && styles.fitted, className)} role="tablist">
       {items.map((item) => {

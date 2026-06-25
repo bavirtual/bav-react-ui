@@ -5,7 +5,7 @@ export interface SpinnerProps {
   className?: string;
 }
 
-export function Spinner({ size, className }: SpinnerProps) {
+export function Spinner({ size = 18, className = "" }: SpinnerProps) {
   return (
     <span
       className={`${styles.spinner} ${className}`}

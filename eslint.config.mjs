@@ -27,7 +27,7 @@ export default defineConfig([
                 ecmaVersion: "latest",
                 sourceType: "module",
                 projectService: {
-                    allowDefaultProject: ["*.js", "*.mjs", "*.cjs"],
+                    allowDefaultProject: ["*.js", "*.mjs", "*.cjs", "vite.config.ts"],
                 },
                 tsconfigRootDir: process.cwd(),
             },

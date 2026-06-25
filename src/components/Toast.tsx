@@ -14,17 +14,17 @@ function Toast({ toast, onClose }: { toast: ToastItem; onClose: () => void }) {
   const [visible, setVisible] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
+  const handleClose = () => {
+    setLeaving(true);
+    setTimeout(onClose, 280);
+  };
+
   useEffect(() => {
     requestAnimationFrame(() => setVisible(true));
     const timer = setTimeout(handleClose, toast.duration);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toast.duration]);
-
-  const handleClose = () => {
-    setLeaving(true);
-    setTimeout(onClose, 280);
-  };
 
   const Icon = iconMap[toast.type];
   const cls = [

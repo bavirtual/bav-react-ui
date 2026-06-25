@@ -86,3 +86,13 @@
   padding: var(--space-4) var(--space-5);
   border-top: 1px solid var(--border);
 }
+
+.compact .header {
+  padding: var(--space-4) var(--space-5) 0;
+}
+.compact .body {
+  padding: var(--space-5) 0;
+}
+.compact .footer {
+  padding: var(--space-3) var(--space-5);
+}

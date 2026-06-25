@@ -24,14 +24,14 @@ const variantClass: Record<ButtonVariant, string> = {
 };
 
 export function Button({
-  variant,
-  size,
-  block,
-  loading,
+  variant = "default",
+  size = "md",
+  block = false,
+  loading = false,
   leftIcon,
   rightIcon,
   className,
-  type,
+  type = "button",
   disabled,
   children,
   ...rest
@@ -42,8 +42,8 @@ export function Button({
       disabled={disabled || loading}
       className={cx(
         styles.button,
-        styles[size!],
-        variantClass[variant!],
+        styles[size],
+        variantClass[variant],
         block && styles.block,
         loading && styles.loading,
         className,

@@ -11,10 +11,10 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 
 export function IconButton({
   label,
-  size,
-  variant,
+  size = "md",
+  variant = "ghost",
   className,
-  type,
+  type = "button",
   children,
   ...rest
 }: IconButtonProps) {
@@ -25,7 +25,7 @@ export function IconButton({
       title={label}
       className={cx(
         styles.button,
-        styles[size!],
+        styles[size],
         variant === "solid" && styles.solid,
         variant === "danger" && styles.danger,
         className,

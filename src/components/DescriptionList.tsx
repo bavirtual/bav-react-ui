@@ -14,7 +14,7 @@ export interface DescriptionListProps {
   className?: string;
 }
 
-export function DescriptionList({ items, wide, className }: DescriptionListProps) {
+export function DescriptionList({ items, wide = false, className }: DescriptionListProps) {
   return (
     <dl className={cx(styles.list, wide && styles.columns2, className)}>
       {items.map((item, i) => (

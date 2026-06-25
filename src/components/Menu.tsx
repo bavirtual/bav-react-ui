@@ -11,7 +11,7 @@ export interface MenuProps {
   className?: string;
 }
 
-export function Menu({ trigger, align, children, className }: MenuProps) {
+export function Menu({ trigger, align = "start", children, className }: MenuProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ export function Menu({ trigger, align, children, className }: MenuProps) {
     <div ref={rootRef} className={cx(styles.root, className)}>
       <span onClick={() => setOpen((o) => !o)}>{trigger}</span>
       {open && (
-        <div className={cx(styles.panel, styles[align!])} role="menu">
+        <div className={cx(styles.panel, styles[align])} role="menu">
           <MenuContext.Provider value={{ close: () => setOpen(false) }}>
             {children}
           </MenuContext.Provider>

@@ -15,7 +15,7 @@ interface StackProps extends BaseProps {
 }
 
 export function Stack({
-  gap,
+  gap = 3,
   align,
   justify,
   as: As = "div",
@@ -28,7 +28,7 @@ export function Stack({
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: gapVar(gap!),
+        gap: gapVar(gap),
         alignItems: align,
         justifyContent: justify,
         ...style,
@@ -47,10 +47,10 @@ interface InlineProps extends BaseProps {
 }
 
 export function Inline({
-  gap,
-  align,
+  gap = 2,
+  align = "center",
   justify,
-  wrap,
+  wrap = false,
   as: As = "div",
   style,
   children,
@@ -61,7 +61,7 @@ export function Inline({
       style={{
         display: "flex",
         flexDirection: "row",
-        gap: gapVar(gap!),
+        gap: gapVar(gap),
         alignItems: align,
         justifyContent: justify,
         flexWrap: wrap ? "wrap" : undefined,

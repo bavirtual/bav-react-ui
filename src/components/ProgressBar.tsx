@@ -10,10 +10,10 @@ export interface ProgressBarProps {
 }
 
 export function ProgressBar({
-  value,
-  size,
+  value = null,
+  size = "md",
   label,
-  showValue,
+  showValue = false,
   className,
 }: ProgressBarProps) {
   const indeterminate = value === null || value === undefined;

@@ -17,7 +17,7 @@ export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
-  { selectSize, invalid, options, placeholder, className, children, ...rest },
+  { selectSize = "md", invalid = false, options, placeholder, className, children, ...rest },
   ref,
 ) {
   return (

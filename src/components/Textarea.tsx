@@ -7,7 +7,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { invalid, className, ...rest },
+  { invalid = false, className, ...rest },
   ref,
 ) {
   return (

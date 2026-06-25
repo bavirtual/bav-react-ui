@@ -20,14 +20,14 @@ export interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
   noMargin?: boolean;
 }
 
-export function Title({ level, type, noMargin, className, ...rest }: TitleProps) {
+export function Title({ level = 2, type = "default", noMargin, className, ...rest }: TitleProps) {
   const Tag = `h${level}` as ElementType;
   return (
     <Tag
       className={cx(
         styles.title,
         styles[`h${level}` as keyof typeof styles],
-        toneClass[type!],
+        toneClass[type],
         noMargin && styles.noMargin,
         className,
       )}
@@ -46,8 +46,8 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 export function Text({
-  type,
-  size,
+  type = "default",
+  size = "md",
   strong,
   code,
   mono,
@@ -59,8 +59,8 @@ export function Text({
     <span
       className={cx(
         styles.text,
-        toneClass[type!],
-        size !== "md" && styles[size!],
+        toneClass[type],
+        size !== "md" && styles[size],
         strong && styles.strong,
         code && styles.code,
         mono && styles.mono,
@@ -76,8 +76,8 @@ export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   type?: TextTone;
 }
 
-export function Paragraph({ type, className, ...rest }: ParagraphProps) {
-  return <p className={cx(styles.paragraph, toneClass[type!], className)} {...rest} />;
+export function Paragraph({ type = "default", className, ...rest }: ParagraphProps) {
+  return <p className={cx(styles.paragraph, toneClass[type], className)} {...rest} />;
 }
 
 export const Typography = { Title, Text, Paragraph };

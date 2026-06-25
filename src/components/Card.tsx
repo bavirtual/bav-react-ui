@@ -6,7 +6,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   interactive?: boolean;
 }
 
-export function Card({ interactive, className, children, ...rest }: CardProps) {
+export function Card({ interactive = false, className, children, ...rest }: CardProps) {
   return (
     <div className={cx(styles.card, interactive && styles.interactive, className)} {...rest}>
       {children}

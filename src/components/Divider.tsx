@@ -8,7 +8,7 @@ export interface DividerProps {
   className?: string;
 }
 
-export function Divider({ orientation, children, className }: DividerProps) {
+export function Divider({ orientation = "horizontal", children, className }: DividerProps) {
   if (children) {
     return (
       <div className={cx(styles.labelled, className)} role="separator">
@@ -18,7 +18,7 @@ export function Divider({ orientation, children, className }: DividerProps) {
   }
   return (
     <hr
-      className={cx(styles.divider, styles[orientation!], className)}
+      className={cx(styles.divider, styles[orientation], className)}
       aria-orientation={orientation}
     />
   );

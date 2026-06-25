@@ -17,9 +17,9 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(function F
   {
     onFileChange,
     fileName,
-    placeholder,
+    placeholder = "Choose a file…",
     icon,
-    invalid,
+    invalid = false,
     disabled,
     className,
     ...rest

@@ -12,6 +12,7 @@ export interface ModalProps {
   footer?: ReactNode;
   dismissible?: boolean;
   showClose?: boolean;
+  compact?: boolean;
   className?: string;
   children?: ReactNode;
 }
@@ -20,10 +21,11 @@ export function Modal({
   open,
   onClose,
   title,
-  size,
+  size = "md",
   footer,
-  dismissible,
-  showClose,
+  dismissible = true,
+  showClose = true,
+  compact = false,
   className,
   children,
 }: ModalProps) {
@@ -46,7 +48,7 @@ export function Modal({
   return createPortal(
     <div className={styles.backdrop} onClick={() => dismissible && onClose()} role="presentation">
       <div
-        className={cx(styles.modal, styles[size!], className)}
+        className={cx(styles.modal, styles[size], compact && styles.compact, className)}
         role="dialog"
         aria-modal="true"
         onClick={(e) => e.stopPropagation()}

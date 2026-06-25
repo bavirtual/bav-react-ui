@@ -9,7 +9,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { inputSize, invalid, leftIcon, className, ...rest },
+  { inputSize = "md", invalid = false, leftIcon, className, ...rest },
   ref,
 ) {
   return (
@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={invalid || undefined}
         className={cx(
           styles.input,
-          styles[inputSize!],
+          styles[inputSize],
           leftIcon && styles.hasIcon,
           invalid && styles.invalid,
           className,
