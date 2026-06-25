@@ -2,7 +2,15 @@ import { useEffect, type ReactNode } from "react";
 import type { Preview, Decorator } from "@storybook/react";
 import { themes, toCssVars, type ThemeName } from "bav-react-ui"
 
-function ThemedFrame({ theme, children }: { theme: ThemeName; children: ReactNode }) {
+function ThemedFrame({
+  theme,
+  fullHeight,
+  children,
+}: {
+  theme: ThemeName;
+  fullHeight: boolean;
+  children: ReactNode;
+}) {
   useEffect(() => {
     const tokens = themes[theme];
     const root = document.documentElement;
@@ -14,16 +22,26 @@ function ThemedFrame({ theme, children }: { theme: ThemeName; children: ReactNod
   }, [theme]);
 
   return (
-      <div style={{ background: "var(--bg)", color: "var(--text)", padding: 24, minHeight: "100vh" }}>
-        {children}
-      </div>
+    <div
+      style={{
+        background: "var(--bg)",
+        color: "var(--text)",
+        padding: 24,
+        ...(fullHeight ? { minHeight: "100vh" } : { borderRadius: 8 }),
+      }}
+    >
+      {children}
+    </div>
   );
 }
 
 const withTheme: Decorator = (Story, context) => (
-    <ThemedFrame theme={(context.globals.theme as ThemeName | undefined) ?? "dark"}>
-      <Story />
-    </ThemedFrame>
+  <ThemedFrame
+    theme={(context.globals.theme as ThemeName | undefined) ?? "dark"}
+    fullHeight={context.viewMode !== "docs"}
+  >
+    <Story />
+  </ThemedFrame>
 );
 
 const preview: Preview = {
