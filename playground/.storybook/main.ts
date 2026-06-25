@@ -11,15 +11,17 @@ const config: StorybookConfig = {
   framework: { name: "@storybook/react-vite", options: {} },
   core: { disableTelemetry: true },
   viteFinal: (config) => {
-    // Vite types `resolve.alias` as either an array or a record; normalize to
-    // the array form so we can append our alias without dropping any existing.
     const existingAlias = config.resolve?.alias;
     const aliasList = Array.isArray(existingAlias)
       ? [...existingAlias]
       : Object.entries(existingAlias ?? {}).map(([find, replacement]) => ({ find, replacement }));
 
+    const esbuildOptions =
+      typeof config.esbuild === "object" && config.esbuild ? config.esbuild : {};
+
     return {
       ...config,
+      esbuild: { ...esbuildOptions, keepNames: true },
       resolve: {
         ...config.resolve,
         alias: [...aliasList, { find: /^bav-react-ui$/, replacement: uiSource }],
