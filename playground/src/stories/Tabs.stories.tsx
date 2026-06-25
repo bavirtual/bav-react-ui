@@ -18,6 +18,9 @@ const meta = {
   title: "Navigation/Tabs",
   component: Tabs,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "Switches between views, with optional counts, disabled tabs and a fitted layout." } },
+  },
   args: { items, value: "overview", onChange: () => undefined },
 } satisfies Meta<typeof Tabs>;
 

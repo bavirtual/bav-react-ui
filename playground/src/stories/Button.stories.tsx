@@ -5,6 +5,9 @@ const meta = {
   title: "Inputs/Button",
   component: Button,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "The primary action trigger, with variants, sizes, a loading state and optional left/right icons." } },
+  },
   argTypes: {
     variant: {
       control: "select",

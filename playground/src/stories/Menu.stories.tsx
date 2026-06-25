@@ -6,6 +6,9 @@ const meta = {
   title: "Overlays/Menu",
   component: Menu,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A dropdown menu of actions, with items, separators, labels, icons and a danger variant." } },
+  },
   args: { trigger: <Button>Actions ▾</Button>, children: <MenuItem>Edit</MenuItem> },
 } satisfies Meta<typeof Menu>;
 

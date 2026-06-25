@@ -11,6 +11,9 @@ const meta = {
   title: "Navigation/Stepper",
   component: Stepper,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A horizontal progress indicator for multi-step flows." } },
+  },
   argTypes: { current: { control: { type: "number", min: 1, max: 3 } } },
   args: { steps, current: 2 },
 } satisfies Meta<typeof Stepper>;

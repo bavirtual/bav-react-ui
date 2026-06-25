@@ -17,6 +17,9 @@ const meta = {
   title: "Inputs/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A group of mutually-exclusive options (RadioGroup), with an optional horizontal layout." } },
+  },
   args: { name: "cabin", options },
 } satisfies Meta<typeof RadioGroup>;
 

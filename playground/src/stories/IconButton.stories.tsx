@@ -6,6 +6,9 @@ const meta = {
   title: "Inputs/IconButton",
   component: IconButton,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A compact, icon-only button (requires an accessible label) in several sizes and variants." } },
+  },
   argTypes: {
     variant: { control: "inline-radio", options: ["ghost", "solid", "danger"] },
     size: { control: "inline-radio", options: ["sm", "md", "lg"] },

@@ -5,6 +5,9 @@ const meta = {
   title: "Inputs/Textarea",
   component: Textarea,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A multi-line text input with an invalid state." } },
+  },
   argTypes: { invalid: { control: "boolean" }, disabled: { control: "boolean" } },
   args: { placeholder: "Write a note…", rows: 4 },
 } satisfies Meta<typeof Textarea>;

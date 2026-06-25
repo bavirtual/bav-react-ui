@@ -5,6 +5,9 @@ const meta = {
   title: "Overlays/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A small popover label shown on hover or focus, in four placements." } },
+  },
   argTypes: {
     placement: { control: "inline-radio", options: ["top", "bottom", "left", "right"] },
     label: { control: "text" },
@@ -21,4 +24,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   render: (args) => <div style={{ padding: 40 }}>{<Tooltip {...args} />}</div>,
+};
+
+export const Placements: Story = {
+  render: () => (
+    <div style={{ display: "flex", gap: 48, padding: 60, flexWrap: "wrap" }}>
+      {(["top", "bottom", "left", "right"] as const).map((p) => (
+        <Tooltip key={p} placement={p} label={`Tooltip on ${p}`}>
+          <Button>{p}</Button>
+        </Tooltip>
+      ))}
+    </div>
+  ),
 };

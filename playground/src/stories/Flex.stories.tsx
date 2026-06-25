@@ -5,6 +5,9 @@ const meta = {
   title: "Layout/Flex",
   component: Flex,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A flexbox layout primitive with direction, alignment, wrapping and preset or numeric gaps." } },
+  },
   argTypes: {
     vertical: { control: "boolean" },
     wrap: { control: "boolean" },

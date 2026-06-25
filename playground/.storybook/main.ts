@@ -6,7 +6,7 @@ const usePolling = process.env.VITE_USE_POLLING === "true";
 const uiSource = fileURLToPath(new URL("../../src/index.ts", import.meta.url));
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(ts|tsx)"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-themes"],
   framework: { name: "@storybook/react-vite", options: {} },
   core: { disableTelemetry: true },

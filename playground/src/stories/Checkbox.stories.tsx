@@ -5,6 +5,9 @@ const meta = {
   title: "Inputs/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A labelled checkbox for boolean or multi-select choices, including an indeterminate state." } },
+  },
   argTypes: {
     disabled: { control: "boolean" },
     defaultChecked: { control: "boolean" },

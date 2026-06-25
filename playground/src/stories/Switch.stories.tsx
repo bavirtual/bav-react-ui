@@ -5,6 +5,9 @@ const meta = {
   title: "Inputs/Switch",
   component: Switch,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A toggle for on/off settings, with an optional label." } },
+  },
   argTypes: {
     disabled: { control: "boolean" },
     defaultChecked: { control: "boolean" },

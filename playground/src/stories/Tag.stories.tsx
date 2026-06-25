@@ -5,6 +5,9 @@ const meta = {
   title: "Data display/Tag",
   component: Tag,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A small, optionally removable label or chip." } },
+  },
   argTypes: { children: { control: "text" }, onRemove: { action: "remove" } },
   args: { children: "EGLL" },
 } satisfies Meta<typeof Tag>;

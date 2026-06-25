@@ -11,6 +11,14 @@ const meta = {
   title: "Inputs/CodeInput",
   component: CodeInput,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A segmented input for one-time / verification codes, with paste support and arrow-key navigation between digits.",
+      },
+    },
+  },
   argTypes: {
     length: { control: { type: "number", min: 1, max: 8 } },
     invalid: { control: "boolean" },

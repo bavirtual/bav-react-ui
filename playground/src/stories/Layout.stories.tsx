@@ -5,6 +5,9 @@ const meta = {
   title: "Layout/Stack & Inline",
   component: Stack,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "Stack (vertical) and Inline (horizontal) spacing primitives built on the design system's spacing scale." } },
+  },
 } satisfies Meta<typeof Stack>;
 
 export default meta;

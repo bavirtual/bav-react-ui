@@ -5,6 +5,9 @@ const meta = {
   title: "Navigation/Breadcrumbs",
   component: Breadcrumbs,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "Shows the path to the current page as a trail of links." } },
+  },
   args: {
     items: [
       { title: "Home", href: "/" },

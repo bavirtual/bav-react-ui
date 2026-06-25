@@ -5,6 +5,9 @@ const meta = {
   title: "Data display/Typography",
   component: Title,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "Title, Text and Paragraph for headings and body copy, with tones, sizes and inline emphasis." } },
+  },
 } satisfies Meta<typeof Title>;
 
 export default meta;

@@ -11,6 +11,9 @@ const meta = {
   title: "Inputs/Select",
   component: Select,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A native select styled to match the design system, with sizes and an invalid state." } },
+  },
   argTypes: {
     selectSize: { control: "inline-radio", options: ["sm", "md"] },
     invalid: { control: "boolean" },
@@ -22,3 +25,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {};
+
+export const Invalid: Story = { args: { invalid: true } };

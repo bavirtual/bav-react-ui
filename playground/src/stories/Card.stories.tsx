@@ -5,6 +5,9 @@ const meta = {
   title: "Surfaces/Card",
   component: Card,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A flexible content surface with optional CardHeader, CardBody and CardFooter parts; can be made interactive." } },
+  },
   argTypes: { interactive: { control: "boolean" } },
 } satisfies Meta<typeof Card>;
 

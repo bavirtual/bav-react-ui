@@ -5,6 +5,9 @@ const meta = {
   title: "Data display/Badge",
   component: Badge,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A small status label in tones like neutral, accent, success, warning or danger; supports dot, mono and square styles." } },
+  },
   argTypes: {
     tone: {
       control: "select",

@@ -6,6 +6,9 @@ const meta = {
   title: "Feedback/EmptyState",
   component: EmptyState,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "A placeholder for empty screens — an icon, title, description and optional actions." } },
+  },
   args: {
     icon: <Inbox size={32} />,
     title: "No documents yet",

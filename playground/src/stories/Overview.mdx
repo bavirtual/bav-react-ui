@@ -1,0 +1,153 @@
+import { Meta } from "@storybook/blocks";
+import { Stack, Inline, Flex, Button, Badge, Avatar } from "bav-react-ui";
+
+<Meta title="Overview" />
+
+export const Demo = ({ children }) => (
+  <div
+    style={{
+      background: "var(--bg)",
+      color: "var(--text)",
+      border: "1px solid var(--border)",
+      borderRadius: 8,
+      padding: 16,
+      margin: "12px 0",
+    }}
+  >
+    {children}
+  </div>
+);
+
+# bav-react-ui
+
+A themeable React component library — buttons, inputs, tables, dialogs, toasts,
+layout primitives and a built-in light/dark theme. Pick any component from the
+sidebar to see it live with editable controls, and use the **Theme** switch in
+the toolbar above to preview it in dark or light mode.
+
+## Install
+
+```bash
+npm install bav-react-ui react react-dom
+```
+
+Styles inject themselves on import — there's no stylesheet to add. `react` and
+`react-dom` are peer dependencies; `zustand` ships with the package.
+
+```tsx
+import { ThemeProvider, ToastViewport, ConfirmDialog, Button } from "bav-react-ui";
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <YourApp />
+      {/* mount once for the toast() / confirm() helpers */}
+      <ToastViewport />
+      <ConfirmDialog />
+    </ThemeProvider>
+  );
+}
+```
+
+## Layout primitives
+
+Most screens are built from three flexbox wrappers. Reach for these instead of
+hand-writing `display: flex` — they keep spacing on the design system's scale.
+
+### Stack — vertical
+
+Stacks children in a column. `gap` uses the spacing scale (`1`–`8`).
+
+<Demo>
+  <Stack gap={3}>
+    <Button variant="primary">Save</Button>
+    <Button>Cancel</Button>
+    <Button variant="ghost">More…</Button>
+  </Stack>
+</Demo>
+
+```tsx
+<Stack gap={3}>
+  <Button variant="primary">Save</Button>
+  <Button>Cancel</Button>
+</Stack>
+```
+
+### Inline — horizontal
+
+A row, vertically centered by default, with optional `wrap`. Great for toolbars,
+tag lists and button groups.
+
+<Demo>
+  <Inline gap={2} wrap>
+    <Badge tone="success">active</Badge>
+    <Badge tone="warning">pending</Badge>
+    <Badge tone="danger">error</Badge>
+    <Button size="sm">Add</Button>
+  </Inline>
+</Demo>
+
+```tsx
+<Inline gap={2} wrap>
+  <Badge tone="success">active</Badge>
+  <Button size="sm">Add</Button>
+</Inline>
+```
+
+### Flex — full control
+
+When you need `justify`, `align`, grow (`flex`), preset/numeric gaps or a
+direction toggle, use `Flex`.
+
+<Demo>
+  <Flex justify="space-between" align="center" gap="middle">
+    <Inline gap={2}>
+      <Avatar name="Ada Lovelace" />
+      <strong>Ada Lovelace</strong>
+    </Inline>
+    <Button size="sm" variant="primary">
+      Follow
+    </Button>
+  </Flex>
+</Demo>
+
+```tsx
+<Flex justify="space-between" align="center" gap="middle">
+  <span>Ada Lovelace</span>
+  <Button size="sm" variant="primary">Follow</Button>
+</Flex>
+```
+
+**Which one?** `Stack` for columns, `Inline` for centered rows, and `Flex` when
+you need finer control (alignment, growth, wrapping).
+
+## Theming
+
+`ThemeProvider` applies the active theme's tokens to `:root` and persists the
+choice (dark by default). Build your own markup with the same CSS variables —
+`var(--bg)`, `var(--card)`, `var(--text)`, `var(--accent)`, `var(--border)`,
+spacing (`var(--space-4)`), radius (`var(--radius-lg)`) and more.
+
+```tsx
+import { useThemeStore } from "bav-react-ui";
+
+useThemeStore.getState().toggleTheme();
+```
+
+## Feedback helpers
+
+`toast` and `confirm` are imperative — call them from anywhere once
+`<ToastViewport />` and `<ConfirmDialog />` are mounted.
+
+```tsx
+import { toast, confirm } from "bav-react-ui";
+
+toast.success("Saved!");
+confirm({ title: "Delete?", message: "Can't be undone.", danger: true, onConfirm: remove });
+```
+
+## Explore
+
+Browse the sidebar — components are grouped into **Inputs**, **Data display**,
+**Feedback**, **Layout**, **Navigation** and **Overlays**. Each page has live
+controls and a copyable code snippet.

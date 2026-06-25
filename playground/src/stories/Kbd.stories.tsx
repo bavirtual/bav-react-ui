@@ -5,6 +5,9 @@ const meta = {
   title: "Data display/Kbd",
   component: Kbd,
   tags: ["autodocs"],
+  parameters: {
+    docs: { description: { component: "Renders a keyboard key or shortcut." } },
+  },
   argTypes: { children: { control: "text" } },
   args: { children: "⌘K" },
 } satisfies Meta<typeof Kbd>;
