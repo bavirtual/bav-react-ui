@@ -1,19 +1,44 @@
 # bav-react-ui
 
-The "bav-react-ui" design system: a themeable React component library containing buttons, inputs, tables, dialogs, toasts, layout primitives and a
-light/dark theme.
+A themeable React component library — buttons, inputs, tables, dialogs, toasts,
+layout primitives and a built-in light/dark theme.
 
-## Usage
+**📖 Full docs, theming guide and live component browser:
+[bavirtual.github.io/bav-react-ui](https://bavirtual.github.io/bav-react-ui/)**
 
-```tsx
-import { ThemeProvider, Button } from "bav-react-ui";
+## Install
 
-export const App = () => (
-  <ThemeProvider>
-    <Button variant="primary">Save</Button>
-  </ThemeProvider>
-);
+```bash
+npm install bav-react-ui react react-dom
 ```
 
-`ThemeProvider` applies the active theme's CSS variables to `:root`; switch with
-`useThemeStore().setTheme("light" | "dark")`.
+(`react` and `react-dom` are peer dependencies, `zustand` ships with the package.)
+
+## Quick start
+
+```tsx
+import { ThemeProvider, ToastViewport, ConfirmDialog, Button } from "bav-react-ui";
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <Button variant="primary">Save changes</Button>
+
+      {/* mount once for the toast() / confirm() helpers */}
+      <ToastViewport />
+      <ConfirmDialog />
+    </ThemeProvider>
+  );
+}
+```
+
+Theming, the full component catalog and usage examples live in the
+[documentation](https://bavirtual.github.io/bav-react-ui/).
+
+## Development
+
+```bash
+bun install
+bun run build            # build the library to dist/
+bun run playground:dev   # Storybook on :5175
+```
