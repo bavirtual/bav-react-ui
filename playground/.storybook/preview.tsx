@@ -32,9 +32,6 @@ const preview: Preview = {
       expanded: true,
       matchers: { color: /(background|color)$/i, date: /Date$/i },
     },
-    docs: {
-      autodocs: 'tag',
-    },
   },
   globalTypes: {
     theme: {
