@@ -1,0 +1,42 @@
+.group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.box {
+  width: 44px;
+  height: 52px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition:
+    border-color var(--dur) ease,
+    box-shadow var(--dur) ease;
+}
+
+.box:focus {
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+}
+
+.invalid {
+  border-color: var(--danger);
+}
+
+.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.25);
+}
+
+@media (max-width: 400px) {
+  .box {
+    width: 38px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+}

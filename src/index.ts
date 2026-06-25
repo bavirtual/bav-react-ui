@@ -31,6 +31,8 @@ export {
 export { FormField, type FormFieldProps } from "./components/FormField";
 export { FileInput, type FileInputProps } from "./components/FileInput";
 export { SearchInput, type SearchInputProps } from "./components/SearchInput";
+export { CodeInput, type CodeInputProps } from "./components/CodeInput";
+export { FormSection, type FormSectionProps } from "./components/FormSection";
 
 export { Badge, type BadgeProps, type BadgeTone } from "./components/Badge";
 export { Tag, type TagProps } from "./components/Tag";
@@ -83,9 +85,13 @@ export {
   type TextSize,
 } from "./components/Typography";
 
+export { PageHeader, type PageHeaderProps } from "./components/PageHeader";
+export { ScrollFade, type ScrollFadeProps } from "./components/ScrollFade";
+
 export { Breadcrumbs, type BreadcrumbsProps, type BreadcrumbItem } from "./components/Breadcrumbs";
 export { Tabs, type TabsProps, type TabItem } from "./components/Tabs";
 export { Pagination, type PaginationProps } from "./components/Pagination";
+export { Stepper, type StepperProps, type StepperStep } from "./components/Stepper";
 export {
   Menu,
   MenuItem,

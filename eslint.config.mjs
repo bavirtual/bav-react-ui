@@ -13,6 +13,7 @@ export default defineConfig([
             "build/**",
             "release/**",
             "storybook-static/**",
+            "**/storybook-static/**",
             "node_modules/**",
             "**/generated/**",
             "**/*.d.ts",

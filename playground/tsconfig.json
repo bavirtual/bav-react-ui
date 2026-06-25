@@ -4,7 +4,11 @@
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
     "types": ["node"],
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "bav-react-ui": ["../src/index.ts"]
+    }
   },
   "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
 }
