@@ -7,7 +7,7 @@
     var(--chips-background) 63%
   );
   background-size: 400% 100%;
-  animation: bav-skeleton 1.4s ease infinite;
+  animation: bav-skeleton 1.4s linear infinite;
   border-radius: var(--radius-sm);
 }
 .text {
@@ -17,4 +17,13 @@
 }
 .circle {
   border-radius: 50%;
+}
+
+@keyframes bav-skeleton {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

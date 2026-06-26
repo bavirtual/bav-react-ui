@@ -5,3 +5,9 @@
   border-top-color: var(--accent);
   animation: bav-spin 0.7s linear infinite;
 }
+
+@keyframes bav-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
