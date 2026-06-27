@@ -6,7 +6,12 @@ const meta = {
   component: FormField,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Wraps a control with a label, hint and error message, wiring up the accessibility attributes." } },
+    docs: {
+      description: {
+        component:
+          "Wraps a control with a label, hint and error message, wiring up the accessibility attributes.",
+      },
+    },
   },
   argTypes: {
     label: { control: "text" },

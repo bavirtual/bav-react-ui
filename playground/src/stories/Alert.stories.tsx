@@ -6,7 +6,12 @@ const meta = {
   component: Alert,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A prominent inline message for contextual feedback — info, success, warning or danger — with an optional title, icon and dismiss button." } },
+    docs: {
+      description: {
+        component:
+          "A prominent inline message for contextual feedback — info, success, warning or danger — with an optional title, icon and dismiss button.",
+      },
+    },
   },
   argTypes: {
     tone: { control: "select", options: ["info", "success", "warning", "danger"] },

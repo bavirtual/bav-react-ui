@@ -6,7 +6,11 @@ const meta = {
   component: Divider,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A horizontal or vertical separator, optionally with a centered label." } },
+    docs: {
+      description: {
+        component: "A horizontal or vertical separator, optionally with a centered label.",
+      },
+    },
   },
   argTypes: { orientation: { control: "inline-radio", options: ["horizontal", "vertical"] } },
   args: { orientation: "horizontal" },

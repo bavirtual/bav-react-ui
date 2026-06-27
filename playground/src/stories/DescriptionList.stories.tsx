@@ -6,7 +6,12 @@ const meta = {
   component: DescriptionList,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Displays label/value pairs for metadata or details; supports a wide layout and monospaced values." } },
+    docs: {
+      description: {
+        component:
+          "Displays label/value pairs for metadata or details; supports a wide layout and monospaced values.",
+      },
+    },
   },
   argTypes: { wide: { control: "boolean" } },
   args: {

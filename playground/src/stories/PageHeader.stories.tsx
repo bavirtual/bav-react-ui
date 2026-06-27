@@ -6,7 +6,9 @@ const meta = {
   component: PageHeader,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A page title with an optional description and trailing actions." } },
+    docs: {
+      description: { component: "A page title with an optional description and trailing actions." },
+    },
   },
   argTypes: { level: { control: "inline-radio", options: [1, 2, 3, 4, 5] } },
   args: {

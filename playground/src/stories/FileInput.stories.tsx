@@ -6,7 +6,11 @@ const meta = {
   component: FileInput,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A styled file picker that shows the chosen file name, with an invalid state." } },
+    docs: {
+      description: {
+        component: "A styled file picker that shows the chosen file name, with an invalid state.",
+      },
+    },
   },
   argTypes: { invalid: { control: "boolean" }, placeholder: { control: "text" } },
   args: { placeholder: "Choose a PDF…", accept: "application/pdf" },

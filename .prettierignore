@@ -1,0 +1,10 @@
+# Build output
+dist
+docs
+**/storybook-static
+
+# Dependencies
+node_modules
+
+# Lockfiles
+bun.lock

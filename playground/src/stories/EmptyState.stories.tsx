@@ -7,7 +7,12 @@ const meta = {
   component: EmptyState,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A placeholder for empty screens — an icon, title, description and optional actions." } },
+    docs: {
+      description: {
+        component:
+          "A placeholder for empty screens — an icon, title, description and optional actions.",
+      },
+    },
   },
   args: {
     icon: <Inbox size={32} />,

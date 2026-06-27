@@ -6,7 +6,12 @@ const meta = {
   component: ProgressBar,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Shows determinate or indeterminate progress, with sizes and an optional value label." } },
+    docs: {
+      description: {
+        component:
+          "Shows determinate or indeterminate progress, with sizes and an optional value label.",
+      },
+    },
   },
   argTypes: {
     value: { control: { type: "range", min: 0, max: 100, step: 1 } },

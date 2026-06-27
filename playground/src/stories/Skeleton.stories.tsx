@@ -6,7 +6,12 @@ const meta = {
   component: Skeleton,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Loading placeholders — text lines, rectangles or circles — to reduce layout shift." } },
+    docs: {
+      description: {
+        component:
+          "Loading placeholders — text lines, rectangles or circles — to reduce layout shift.",
+      },
+    },
   },
   argTypes: { variant: { control: "inline-radio", options: ["rect", "text", "circle"] } },
   args: { variant: "rect", width: 240, height: 16 },

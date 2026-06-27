@@ -6,7 +6,11 @@ const meta = {
   component: Tooltip,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A small popover label shown on hover or focus, in four placements." } },
+    docs: {
+      description: {
+        component: "A small popover label shown on hover or focus, in four placements.",
+      },
+    },
   },
   argTypes: {
     placement: { control: "inline-radio", options: ["top", "bottom", "left", "right"] },

@@ -6,7 +6,12 @@ const meta = {
   component: Title,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Title, Text and Paragraph for headings and body copy, with tones, sizes and inline emphasis." } },
+    docs: {
+      description: {
+        component:
+          "Title, Text and Paragraph for headings and body copy, with tones, sizes and inline emphasis.",
+      },
+    },
   },
 } satisfies Meta<typeof Title>;
 

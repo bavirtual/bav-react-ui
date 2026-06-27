@@ -6,7 +6,11 @@ const meta = {
   component: Stat,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A compact metric with a label, value and optional delta and trend." } },
+    docs: {
+      description: {
+        component: "A compact metric with a label, value and optional delta and trend.",
+      },
+    },
   },
   argTypes: { trend: { control: "inline-radio", options: [undefined, "up", "down"] } },
   args: {

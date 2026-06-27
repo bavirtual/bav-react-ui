@@ -6,7 +6,12 @@ const meta = {
   component: Avatar,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Shows a user's image, or their initials as a fallback, in several sizes and an optional square shape." } },
+    docs: {
+      description: {
+        component:
+          "Shows a user's image, or their initials as a fallback, in several sizes and an optional square shape.",
+      },
+    },
   },
   argTypes: {
     name: { control: "text" },

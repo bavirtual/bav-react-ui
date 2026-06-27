@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import type { Preview, Decorator } from "@storybook/react";
-import { themes, toCssVars, type ThemeName } from "bav-react-ui"
+import { themes, toCssVars, type ThemeName } from "bav-react-ui";
 
 function ThemedFrame({
   theme,

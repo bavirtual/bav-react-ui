@@ -6,7 +6,11 @@ const meta = {
   component: Input,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A text input with sizes, an invalid state and an optional left icon." } },
+    docs: {
+      description: {
+        component: "A text input with sizes, an invalid state and an optional left icon.",
+      },
+    },
   },
   argTypes: {
     inputSize: { control: "inline-radio", options: ["sm", "md"] },

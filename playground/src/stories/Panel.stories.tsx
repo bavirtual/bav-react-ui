@@ -6,7 +6,12 @@ const meta = {
   component: Panel,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A titled content surface with an optional header, actions and flush/headerless modes." } },
+    docs: {
+      description: {
+        component:
+          "A titled content surface with an optional header, actions and flush/headerless modes.",
+      },
+    },
   },
   argTypes: { flush: { control: "boolean" }, disableHeader: { control: "boolean" } },
   args: { headerTitle: "Dispatch", headerActions: <Button size="sm">Save</Button> },

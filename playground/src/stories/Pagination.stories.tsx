@@ -14,7 +14,9 @@ const meta = {
   component: Pagination,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Page navigation for long lists, with page counts and totals." } },
+    docs: {
+      description: { component: "Page navigation for long lists, with page counts and totals." },
+    },
   },
   args: { page: 1, pageCount: 10, onChange: () => undefined },
 } satisfies Meta<typeof Pagination>;

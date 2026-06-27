@@ -19,7 +19,11 @@ const meta = {
   component: SearchInput,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A search field with a clear button and an optional keyboard-shortcut hint." } },
+    docs: {
+      description: {
+        component: "A search field with a clear button and an optional keyboard-shortcut hint.",
+      },
+    },
   },
   args: { value: "", onValueChange: () => undefined },
 } satisfies Meta<typeof SearchInput>;

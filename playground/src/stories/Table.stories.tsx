@@ -14,7 +14,12 @@ const meta = {
   component: Table,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A data table built from header/body/row/cell parts; supports compact and clickable rows, numeric and mono cells, and an empty state." } },
+    docs: {
+      description: {
+        component:
+          "A data table built from header/body/row/cell parts; supports compact and clickable rows, numeric and mono cells, and an empty state.",
+      },
+    },
   },
   argTypes: { compact: { control: "boolean" }, clickableRows: { control: "boolean" } },
 } satisfies Meta<typeof Table>;

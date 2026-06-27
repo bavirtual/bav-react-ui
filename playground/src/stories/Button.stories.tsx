@@ -6,7 +6,12 @@ const meta = {
   component: Button,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "The primary action trigger, with variants, sizes, a loading state and optional left/right icons." } },
+    docs: {
+      description: {
+        component:
+          "The primary action trigger, with variants, sizes, a loading state and optional left/right icons.",
+      },
+    },
   },
   argTypes: {
     variant: {

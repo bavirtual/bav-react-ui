@@ -6,7 +6,12 @@ const meta = {
   component: ConfirmDialog,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A global confirmation dialog driven imperatively by confirm({...}). Mount <ConfirmDialog /> once near the app root." } },
+    docs: {
+      description: {
+        component:
+          "A global confirmation dialog driven imperatively by confirm({...}). Mount <ConfirmDialog /> once near the app root.",
+      },
+    },
   },
 } satisfies Meta<typeof ConfirmDialog>;
 

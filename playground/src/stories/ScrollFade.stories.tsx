@@ -6,7 +6,12 @@ const meta = {
   component: ScrollFade,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A scroll container that fades its top and bottom edges to hint at more content." } },
+    docs: {
+      description: {
+        component:
+          "A scroll container that fades its top and bottom edges to hint at more content.",
+      },
+    },
   },
   args: { children: null },
 } satisfies Meta<typeof ScrollFade>;

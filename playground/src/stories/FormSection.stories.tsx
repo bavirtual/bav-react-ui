@@ -6,7 +6,12 @@ const meta = {
   component: FormSection,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A numbered form section with a title, description and optional/required markers, for grouping fields." } },
+    docs: {
+      description: {
+        component:
+          "A numbered form section with a title, description and optional/required markers, for grouping fields.",
+      },
+    },
   },
   argTypes: {
     optional: { control: "boolean" },

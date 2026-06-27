@@ -34,7 +34,12 @@ const meta = {
   component: Modal,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A centered dialog with a title, body and footer; dismissible, with sizes and a compact mode." } },
+    docs: {
+      description: {
+        component:
+          "A centered dialog with a title, body and footer; dismissible, with sizes and a compact mode.",
+      },
+    },
   },
   argTypes: { size: { control: "inline-radio", options: ["sm", "md", "lg"] } },
   args: { open: false, onClose: () => undefined },

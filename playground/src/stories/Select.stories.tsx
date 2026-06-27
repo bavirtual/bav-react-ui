@@ -12,7 +12,12 @@ const meta = {
   component: Select,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "A native select styled to match the design system, with sizes and an invalid state." } },
+    docs: {
+      description: {
+        component:
+          "A native select styled to match the design system, with sizes and an invalid state.",
+      },
+    },
   },
   argTypes: {
     selectSize: { control: "inline-radio", options: ["sm", "md"] },

@@ -6,7 +6,12 @@ const meta = {
   component: ToastViewport,
   tags: ["autodocs"],
   parameters: {
-    docs: { description: { component: "Transient notifications fired imperatively via toast.*; render <ToastViewport /> once near the app root." } },
+    docs: {
+      description: {
+        component:
+          "Transient notifications fired imperatively via toast.*; render <ToastViewport /> once near the app root.",
+      },
+    },
   },
 } satisfies Meta<typeof ToastViewport>;
 
