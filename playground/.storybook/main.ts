@@ -5,9 +5,12 @@ const usePolling = process.env.VITE_USE_POLLING === "true";
 
 const uiSource = fileURLToPath(new URL("../../src/index.ts", import.meta.url));
 
+const uiTsconfig = fileURLToPath(new URL("../../tsconfig.json", import.meta.url));
+const uiSrcDir = fileURLToPath(new URL("../../src", import.meta.url));
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "@storybook/addon-themes"],
+  addons: ["@storybook/addon-themes", "@storybook/addon-docs"],
   framework: { name: "@storybook/react-vite", options: {} },
   core: { disableTelemetry: true },
   viteFinal: (config) => {
@@ -16,12 +19,8 @@ const config: StorybookConfig = {
       ? [...existingAlias]
       : Object.entries(existingAlias ?? {}).map(([find, replacement]) => ({ find, replacement }));
 
-    const esbuildOptions =
-      typeof config.esbuild === "object" && config.esbuild ? config.esbuild : {};
-
     return {
       ...config,
-      esbuild: { ...esbuildOptions, keepNames: true },
       resolve: {
         ...config.resolve,
         alias: [...aliasList, { find: /^bav-react-ui$/, replacement: uiSource }],
@@ -33,12 +32,11 @@ const config: StorybookConfig = {
       },
     };
   },
-  docs: {
-    autodocs: "tag",
-  },
   typescript: {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
+      tsconfigPath: uiTsconfig,
+      include: [`${uiSrcDir}/**/*.tsx`],
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
       propFilter: (prop) => (prop.parent ? !prop.parent.fileName.includes("node_modules") : true),

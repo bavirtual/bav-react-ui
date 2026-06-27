@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Title, Text, Paragraph } from "bav-react-ui";
 
 const meta = {

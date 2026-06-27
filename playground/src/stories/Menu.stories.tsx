@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Menu, MenuItem, MenuSeparator, Button } from "bav-react-ui";
 import { Edit2, Copy, Trash2 } from "react-feather";
 

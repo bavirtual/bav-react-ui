@@ -1,5 +1,5 @@
 import { useState, type ComponentProps } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Modal, Button } from "bav-react-ui";
 
 function ModalDemo(args: ComponentProps<typeof Modal>) {

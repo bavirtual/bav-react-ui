@@ -1,3 +1,5 @@
+import storybook from "eslint-plugin-storybook";
+
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import prettierConfig from "eslint-config-prettier";
@@ -19,7 +21,6 @@ export default defineConfig([
       "**/*.d.ts",
     ],
   },
-
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
@@ -34,12 +35,10 @@ export default defineConfig([
       },
     },
   },
-
   js.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   prettierConfig,
-
   {
     rules: {
       "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
@@ -58,7 +57,6 @@ export default defineConfig([
       ],
     },
   },
-
   {
     rules: {
       "@typescript-eslint/no-unsafe-assignment": "off",
@@ -74,21 +72,17 @@ export default defineConfig([
       "@typescript-eslint/no-dynamic-delete": "off",
     },
   },
-
   {
     files: ["**/*.{js,mjs,cjs}"],
     extends: [tseslint.configs.disableTypeChecked],
   },
-
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat["jsx-runtime"],
   {
     plugins: { "react-hooks": pluginReactHooks },
     rules: pluginReactHooks.configs.recommended.rules,
   },
-
   prettierConfig,
-
   {
     settings: { react: { version: "detect" } },
     rules: {
@@ -96,4 +90,5 @@ export default defineConfig([
       "react/jsx-uses-react": "off",
     },
   },
+  ...storybook.configs["flat/recommended"],
 ]);

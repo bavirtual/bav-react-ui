@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EmptyState, Button } from "bav-react-ui";
 import { Inbox } from "react-feather";
 

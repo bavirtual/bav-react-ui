@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ConfirmDialog, confirm, Button } from "bav-react-ui";
 
 const meta = {

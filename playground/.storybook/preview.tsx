@@ -1,6 +1,7 @@
 import { useEffect, type ReactNode } from "react";
-import type { Preview, Decorator } from "@storybook/react";
+import type { Preview, Decorator } from "@storybook/react-vite";
 import { themes, toCssVars, type ThemeName } from "bav-react-ui";
+import { storybookDark } from "./theme";
 
 function ThemedFrame({
   theme,
@@ -52,6 +53,9 @@ const preview: Preview = {
     },
     options: {
       storySort: { order: ["Overview", "*"] },
+    },
+    docs: {
+      theme: storybookDark,
     },
   },
   globalTypes: {

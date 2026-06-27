@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { CodeInput } from "bav-react-ui";
 
 function CodeInputDemo({ length, invalid }: { length?: number; invalid?: boolean }) {
