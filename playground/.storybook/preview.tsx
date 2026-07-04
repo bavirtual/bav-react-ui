@@ -1,17 +1,34 @@
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useSyncExternalStore, type ReactNode } from "react";
 import type { Preview, Decorator } from "@storybook/react-vite";
-import { themes, toCssVars, type ThemeName } from "bav-react-ui";
+import { themes, toCssVars, getSystemTheme, type ThemePreference } from "bav-react-ui";
 import { storybookDark } from "./theme";
 
+function subscribeSystemTheme(onChange: () => void) {
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
+  mql.addEventListener("change", onChange);
+  return () => mql.removeEventListener("change", onChange);
+}
+
+function useResolvedTheme(preference: ThemePreference) {
+  const systemTheme = useSyncExternalStore(
+    subscribeSystemTheme,
+    getSystemTheme,
+    () => "dark" as const,
+  );
+  return preference === "system" ? systemTheme : preference;
+}
+
 function ThemedFrame({
-  theme,
+  preference,
   fullHeight,
   children,
 }: {
-  theme: ThemeName;
+  preference: ThemePreference;
   fullHeight: boolean;
   children: ReactNode;
 }) {
+  const theme = useResolvedTheme(preference);
+
   useEffect(() => {
     const tokens = themes[theme];
     const root = document.documentElement;
@@ -38,7 +55,7 @@ function ThemedFrame({
 
 const withTheme: Decorator = (Story, context) => (
   <ThemedFrame
-    theme={(context.globals.theme as ThemeName | undefined) ?? "dark"}
+    preference={(context.globals.theme as ThemePreference | undefined) ?? "dark"}
     fullHeight={context.viewMode !== "docs"}
   >
     <Story />
@@ -68,6 +85,7 @@ const preview: Preview = {
         items: [
           { value: "dark", title: "Dark" },
           { value: "light", title: "Light" },
+          { value: "system", title: "System" },
         ],
         dynamicTitle: true,
       },

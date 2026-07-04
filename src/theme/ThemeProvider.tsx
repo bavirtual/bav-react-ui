@@ -9,6 +9,8 @@ export interface ThemeProviderProps {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const tokens = useThemeStore((s) => s.tokens);
   const currentTheme = useThemeStore((s) => s.currentTheme);
+  const preference = useThemeStore((s) => s.preference);
+  const syncSystemTheme = useThemeStore((s) => s.syncSystemTheme);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -18,6 +20,15 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     }
     root.setAttribute("data-theme", currentTheme);
   }, [tokens, currentTheme]);
+
+  useEffect(() => {
+    if (preference !== "system" || typeof window === "undefined" || !window.matchMedia) return;
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    syncSystemTheme();
+    const handler = () => syncSystemTheme();
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, [preference, syncSystemTheme]);
 
   return <>{children}</>;
 }

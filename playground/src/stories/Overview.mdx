@@ -133,8 +133,15 @@ spacing (`var(--space-4)`), radius (`var(--radius-lg)`) and more.
 ```tsx
 import { useThemeStore } from "bav-react-ui";
 
+// toggle dark <-> light
 useThemeStore.getState().toggleTheme();
+
+// or follow the OS setting — updates live when the system theme changes
+useThemeStore.getState().setTheme("system");
 ```
+
+`setTheme` accepts `"dark"`, `"light"`, or `"system"`. Read `preference` for the
+user's choice and `currentTheme` for the resolved `"dark" | "light"` value.
 
 ## Feedback helpers
 
