@@ -47,8 +47,7 @@ export const useThemeStore = create<ThemeStore>()(
       partialize: (state) => ({ preference: state.preference }),
       merge: (persisted, current) => {
         const saved = persisted as
-          | Partial<{ preference: ThemePreference; currentTheme: ThemeName }>
-          | undefined;
+          Partial<{ preference: ThemePreference; currentTheme: ThemeName }> | undefined;
         const preference = saved?.preference ?? saved?.currentTheme ?? current.preference;
         const resolved = resolveTheme(preference);
         return { ...current, preference, currentTheme: resolved, tokens: themes[resolved] };

@@ -8,11 +8,7 @@ export {
   type ThemeTokens,
   type ThemeName,
 } from "./theme/tokens";
-export {
-  useThemeStore,
-  getSystemTheme,
-  type ThemePreference,
-} from "./theme/useThemeStore";
+export { useThemeStore, getSystemTheme, type ThemePreference } from "./theme/useThemeStore";
 export { ThemeProvider, type ThemeProviderProps } from "./theme/ThemeProvider";
 
 export { cx, type ClassValue } from "./utils/cx";
