@@ -19,6 +19,7 @@ interface ThemeStore {
   tokens: ThemeTokens;
   setTheme: (preference: ThemePreference) => void;
   toggleTheme: () => void;
+  overrideSystemTheme: (themeName: ThemeName) => void;
   syncSystemTheme: () => void;
 }
 
@@ -35,6 +36,10 @@ export const useThemeStore = create<ThemeStore>()(
       toggleTheme: () => {
         const next: ThemeName = get().currentTheme === "dark" ? "light" : "dark";
         set({ preference: next, currentTheme: next, tokens: themes[next] });
+      },
+      overrideSystemTheme: (themeName: ThemeName) => {
+        if (get().preference !== "system") return;
+        set({ preference: "system", currentTheme: themeName, tokens: themes[themeName] });
       },
       syncSystemTheme: () => {
         if (get().preference !== "system") return;
