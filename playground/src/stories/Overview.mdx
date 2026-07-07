@@ -138,10 +138,16 @@ useThemeStore.getState().toggleTheme();
 
 // or follow the OS setting — updates live when the system theme changes
 useThemeStore.getState().setTheme("system");
+
+// set theme temporarily to light, whilst the system's theme is still dark (and vice versa)
+useThemeStore.getState().overrideSystemTheme("light");
 ```
 
 `setTheme` accepts `"dark"`, `"light"`, or `"system"`. Read `preference` for the
 user's choice and `currentTheme` for the resolved `"dark" | "light"` value.
+
+The `overrideSystemTheme` lasts until the system's theme is the same as
+the overridden one.
 
 ## Feedback helpers
 
