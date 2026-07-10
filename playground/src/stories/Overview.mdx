@@ -146,8 +146,12 @@ useThemeStore.getState().overrideSystemTheme("light");
 `setTheme` accepts `"dark"`, `"light"`, or `"system"`. Read `preference` for the
 user's choice and `currentTheme` for the resolved `"dark" | "light"` value.
 
-The `overrideSystemTheme` lasts until the system's theme is the same as
-the overridden one.
+The `overrideSystemTheme(themeName)` temporarily shows `themeName` while your
+preference stays `"system"`. It only applies when the current preference is
+`"system"`. The override is in-memory: it clears on the next system theme
+change, on any `ThemeProvider` remount, and on page reload — whichever comes
+first. Call it from an event handler (not a mount effect), and use
+`setTheme("system")` to end it explicitly.
 
 ## Feedback helpers
 

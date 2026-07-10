@@ -39,7 +39,7 @@ export const useThemeStore = create<ThemeStore>()(
       },
       overrideSystemTheme: (themeName: ThemeName) => {
         if (get().preference !== "system") return;
-        set({ preference: "system", currentTheme: themeName, tokens: themes[themeName] });
+        set({ currentTheme: themeName, tokens: themes[themeName] });
       },
       syncSystemTheme: () => {
         if (get().preference !== "system") return;
